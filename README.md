@@ -5,7 +5,7 @@ ukuleles, basses, etc.
 
 # Example Usage
 
-See kitchen-sink.html for all options available.
+See [kitchen-sink.html](https://theriault.github.io/vue-fretboard/kitchen-sink.html) for all options available.
 
 ```
 <script type="module">
@@ -32,8 +32,8 @@ app.mount('#app');
 # Available Attributes
 
 - `scale`: individual notes separated by a space or a preprogrammed scale such
-  as `C# Major` or `A Aeolian`.
-- `tuning`: individual notes separated by a space
+  as `C# Major` or `A Aeolian` (default: `C D E F G A B`)
+- `tuning`: individual notes separated by a space (default: `G C E A`)
 - `orientation`: either `horizontal` or `vertical` (default: `horizontal`)
 - `strumming-hand`: either `right` or `left` (default: `right`)
 - `frets`: number of frets to display (default: `5`)
@@ -49,8 +49,8 @@ app.mount('#app');
 - `note-radius`: radius of each note circle (default: `12`)
 - `note-color`: fill color of each note that is not a root note (default: `#555555`)
 - `root-color`: fill color of each root note (default: `#880000`)
-- `note-text-color`: text color on each note that is not a root note (default: ``)
-- `root-text-color`: text color on each root notes (default: ``)
+- `note-text-color`: text color on each note that is not a root note (default: `#EEEEEE`)
+- `root-text-color`: text color on each root notes (default: `#EEEEEE`)
 - `reference`: zero or more space separated reference dots to show on the neck. enter a number twice to get two dots (default: `5 7 10 12 12 15`)
 - `reference-radius`: size of each reference dot (default: `5`)
-- `reference-color`: fill color of reference dots (default: `#7c27b4`)
+- `reference-color`: fill color of reference dots (default: `#777777`)

@@ -116,7 +116,7 @@
 
 			<fieldset class="form-group">
 				<legend>Notes</legend>
-				
+
 				<div class="form-group">
 					<label for="noteRadius">Note Radius</label>
 					<input id="noteRadius" class="form-control" type="number" v-model="$root.noteRadius" />
@@ -173,7 +173,7 @@
 			</fieldset>
 
 			<hr/>
-			
+
 			<fieldset class="form-group">
 				<legend>Frets</legend>
 				<div class="form-group">
@@ -225,7 +225,7 @@
 		</section>
 	</div>
 	<script type="module">
-		import {fretboard} from '/v-fretboard.js';
+		import {fretboard} from './v-fretboard.js';
 		let app = Vue.createApp({
 			data: () => ({
 				scale: "C Major",
