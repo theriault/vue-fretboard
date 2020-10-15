@@ -226,31 +226,41 @@
 	</div>
 	<script type="module">
 		import {fretboard} from './v-fretboard.js';
+		let data = {
+			scale: "C Major",
+			tuning: "G C E A",
+			orientation: "horizontal",
+			strummingHand: "right",
+			nutSize: 10,
+			start: 0,
+			fretSize: 2,
+			frets: 15,
+			fretSpace: "66",
+			fretColor: "#707070",
+			strings: 4,
+			stringSize: "3",
+			stringSpace: "40",
+			stringColor: "#a8744d",
+			noteRadius: 12,
+			noteColor: "#0f267b",
+			rootColor: "#ba2121",
+			noteTextColor: "#EEEEEE",
+			rootTextColor: "#EEEEEE",
+			reference: "5 7 10 12 12 15",
+			referenceRadius: 5,
+			referenceColor: "#7c27b4",
+		};
+		let watch = {};
+		Object.keys(data).forEach((key) => {
+			watch[key] = (val) => window.localStorage.setItem(key, val);
+			let value = window.localStorage.getItem(key);
+			if (value !== null) {
+				data[key] = value;
+			}
+		});
 		let app = Vue.createApp({
-			data: () => ({
-				scale: "C Major",
-				tuning: "G C E A",
-				orientation: "horizontal",
-				strummingHand: "right",
-				nutSize: 10,
-				start: 0,
-				fretSize: 2,
-				frets: 15,
-				fretSpace: "66",
-				fretColor: "#707070",
-				strings: 4,
-				stringSize: "3",
-				stringSpace: "40",
-				stringColor: "#a8744d",
-				noteRadius: 12,
-				noteColor: "#0f267b",
-				rootColor: "#ba2121",
-				noteTextColor: "#EEEEEE",
-				rootTextColor: "#EEEEEE",
-				reference: "5 7 10 12 12 15",
-				referenceRadius: 5,
-				referenceColor: "#7c27b4",
-			})
+			data: () => data,
+			watch: watch,
 		});
 		app.component('v-fretboard', fretboard);
 		app.mount('#app');
